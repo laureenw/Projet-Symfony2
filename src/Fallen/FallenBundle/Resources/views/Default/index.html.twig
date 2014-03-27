@@ -1,0 +1,23 @@
+{% extends "::layout.html.twig" %}
+
+{% block body %}
+<div class="container">
+
+    <div class="row">
+
+
+    <div class="col-xs-9">
+        <!-- Tab panes -->
+        <div class="tab-content">
+            {% for flashMessage in app.session.flashbag.get('notice') %}
+                <p> {{flashMessage}} </p>
+            {% endfor %}
+       </div>
+    </div>
+
+    <div class="clearfix"></div>
+
+    </div>
+</div>
+
+{% endblock %}

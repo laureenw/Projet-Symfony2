@@ -1,0 +1,39 @@
+{% extends "::layout.html.twig" %}
+
+{% block title "Formulaire de contact" %}
+{% block javascripts %}
+    {{ form_javascript(form) }}
+{% endblock %}
+{% block body %}
+<div class="container">
+    <hr>
+    <div class="row">
+
+
+    <div class="col-xs-9">
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <div class="tab-pane active" id="objectif">
+ 
+                <form action="{{ path('fallen_contact') }}" method="POST" id="contact_form" {{ form_enctype(form) }}>
+                {{ form_errors(form) }}
+
+                {{ form_row(form.email) }}
+                {{ form_row(form.sujet) }}
+                {{ form_row(form.message) }}
+                {{ form_widget(form) }}
+
+                {{ form_rest(form) }}
+
+                <input type="submit" value="Envoyer" class="btn btn-default" />
+            </form>
+            </div>
+       </div>
+    </div>
+
+    <div class="clearfix"></div>
+
+    </div>
+</div>
+
+{% endblock %}

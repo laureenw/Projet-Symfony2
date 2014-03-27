@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}Fallen Eight{% endblock %}</title>
+        {% block stylesheets %}
+            <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}" type="text/css"/>
+            <link rel="stylesheet" href="{{ asset('css/navbar.css') }}" type="text/css"/>
+            <link rel="stylesheet" href="{{ asset('css/projet.css') }}" type="text/css"/>
+            <link rel="stylesheet" href="{{ asset('css/player.css') }}" type="text/css"/>
+        {% endblock %}
+        <link rel="stylesheet" href="{{ asset('css/jquery-ui.css') }}">
+        <script src="{{ asset('js/jquery-1.10.2.js') }}"></script>
+        <script src="{{ asset('js/jquery-ui.js') }}"></script>
+        
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/jquery.jscrollpane.css') }}" media="all" />
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/html5audio.css') }}" />
+        
+	<script type="text/javascript" src="{{ asset('js/jquery-1.8.1.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/jquery.mousewheel.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/jquery.jscrollpane.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/soundmanager.js') }}" ></script>
+	<script type="text/javascript" src="{{ asset('js/jquery.html5audio.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/jquery.apPlaylistManager.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/jquery.apTextScroller.min.js') }}"></script>
+      
+        <!-- Add mousewheel plugin (this is optional) -->
+        <script type="text/javascript" src="{{ asset('js/fancybox/lib/jquery.mousewheel-3.0.6.pack.js') }}"></script>
+
+        <!-- Add fancyBox -->
+        <link rel="stylesheet" href="{{ asset('js/fancybox/source/jquery.fancybox.css?v=2.1.5') }}" type="text/css" media="screen" />
+        <script type="text/javascript" src="{{ asset('js/fancybox/source/jquery.fancybox.pack.js?v=2.1.5') }}"></script>
+
+        <!-- Optionally add helpers - button, thumbnail and/or media -->
+        <link rel="stylesheet" href="{{ asset('js/fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5') }}" type="text/css" media="screen" />
+        <script type="text/javascript" src="{{ asset('js/fancybox/source/helpers/jquery.fancybox-buttons.js?v=1.0.5') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/fancybox/source/helpers/jquery.fancybox-media.js?v=1.0.6') }}"></script>
+        
+        
+        <link rel="stylesheet" href="{{ asset('js/fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7') }}" type="text/css" media="screen" />
+        <script type="text/javascript" src="{{ asset('js/fancybox/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7') }}"></script>
+    </head>
+    <body>
+        <!--<div id="fb-root"></div>
+        <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/fr_FR/all.js#xfbml=1";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>-->
+        <div class="container">
+            <div class="pull-left">
+                <a href="{{ path('fallen_index') }}"><img src="{{ asset('img/fr.png') }}" width="50px" /></a>
+            </div>
+            <div class="pull-right">
+                <a href="https://www.facebook.com/FallenEight"><img src="{{ asset('img/fb-logo2.png') }}" width="50px" /></a>
+                <a href="https://twitter.com/FallenEightBand"><img src="{{ asset('img/twitter-logo2.png') }}" width="50px" /></a>
+            </div>
+            <!--<div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>-->
+            <img src="{{ asset('img/header.png') }}" />
+            <!-- Static navbar -->
+            <div class="menu" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="{{ path('fallen_home') }}"><b id="titre">Home</b></a></li>
+                    <li><a href="{{ path('fallen_photos_en') }}"><b id="titre">Photos</b></a></li>
+                    <li><a href="{{ path('fallen_contact_en') }}"><b id="titre">Contact</b></a></li>
+                </ul>
+
+            </div><!--/.nav-collapse -->
+            <!-- Main component -->
+            <div class="philea-text-content">
+                {% block body %}
+                {% endblock %}
+            </div>
+        </div> <!-- container -->
+        <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+
+        {% block head %}{% endblock %}
+        <br/>
+        <div class="container">
+          <hr/>
+          <div class="footer text-right">
+            <div class="footer">
+                <ul class="list-inline">
+                    <li><a href="#">Legal notice</a></li>
+                </ul>
+            </div>
+          </div>
+        </div>
+    </body>
+</html>
